@@ -21,7 +21,7 @@ if __name__ == '__main__':
     start = time.time()
     results = loop.run_until_complete(asyncio.gather(*coros))
     time_result = time.time() - start
-    print('Asyncio tasks ends', time_result, 'ms')
+    print('Asyncio tasks ends', time_result, 'seconds')
 
     # Using threads
     # prepare list to fill results (checking real results)
@@ -44,10 +44,10 @@ if __name__ == '__main__':
     for index, thread in threads.items():
         threads[index] = thread.join()
     time_result = time.time() - start
-    print('Thread tasks ends', time_result, 'ms')
+    print('Thread tasks ends', time_result, 'seconds')
 
 
 ################
 # Results
-# Asyncio tasks ends 2.5426511764526367 ms
-# Thread tasks ends 0.9772424697875977 ms
+# Asyncio tasks ends 2.5426511764526367 seconds
+# Thread tasks ends 0.9772424697875977 seconds
