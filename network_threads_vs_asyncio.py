@@ -1,11 +1,10 @@
 import threading
-
 import httpx
+import asyncio
+import time
+
 
 if __name__ == '__main__':
-    import asyncio
-    import time
-
     limit = 100
 
     # Classic Asyncio code
@@ -46,3 +45,9 @@ if __name__ == '__main__':
         threads[index] = thread.join()
     time_result = time.time() - start
     print('Thread tasks ends', time_result, 'ms')
+
+
+################
+# Results
+# Asyncio tasks ends 2.5426511764526367 ms
+# Thread tasks ends 0.9772424697875977 ms
